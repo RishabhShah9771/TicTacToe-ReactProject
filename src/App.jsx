@@ -61,7 +61,7 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
 
   const activePlayer = deriveActivePlayer(gameTurns);
-  const gameBoard = deriveGameBoard(gameBoard);
+  const gameBoard = deriveGameBoard(gameTurns);
   const winner = deriveWinner(gameBoard, players);
   const hasDraw = gameTurns.length === 9 && !winner;
 
@@ -78,6 +78,7 @@ function App() {
   }
   function handleRestart() {
     setGameTurns([]);
+    console.log(setGameTurns([]));
   }
   function handlePlayerNameChange(symbol, newName) {
     setPlayers((prevPlayers) => {
